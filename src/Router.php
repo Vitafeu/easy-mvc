@@ -26,6 +26,8 @@ class Router {
     }
 
     public function dispatch($method, $uri) {
+        // TODO : GET and POST routes
+
         if (array_key_exists($method, $this->routes) && array_key_exists($uri, $this->routes[$method])) {
             $controller = $this->routes[$method][$uri]['controller'];
             $action = $this->routes[$method][$uri]['action'];

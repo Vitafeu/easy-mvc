@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Home</title>
 </head>
 <body>
-    <h1>Your age is <?= $data['age'] ?>!</h1>
-    <a href="/">Home</a>
+    <h1>Hello, <?= $data['Name'] ?>!</h1>
+    <a href="/test?age=18">Test</a>
 </body>
 </html>
