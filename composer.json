@@ -1,0 +1,17 @@
+{
+    "name": "vitafeu/easy-mvc",
+    "description": "A small made from scratch MVC framework",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Benjamin Feurly",
+            "email": "professional@vitafeu.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Vitafeu\\EasyMVC\\": "src/"
+        }
+    }
+}
