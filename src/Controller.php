@@ -14,4 +14,9 @@ class Controller {
             throw new \Exception("View not found: $view");
         }
     }
+
+    protected function redirect($path) {
+        header("Location: $path");
+        exit();
+    }
 }

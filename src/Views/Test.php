@@ -6,7 +6,7 @@
     <title>Test</title>
 </head>
 <body>
-    <h1>Your age is <?= $data['age'] ?>!</h1>
+    <h1>Your name is <?= $data['firstName'] ?> and you are <?= $data['age'] ?> years old!</h1>
     <a href="/">Home</a>
 </body>
 </html>

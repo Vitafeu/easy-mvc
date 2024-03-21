@@ -1,6 +1,14 @@
 <?php
 
+/**
+ * This file is used only to test the library.
+ */
+
 require_once __DIR__ . '/../vendor/autoload.php';   
+
+// Load .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 use Vitafeu\EasyMVC\Router;
 

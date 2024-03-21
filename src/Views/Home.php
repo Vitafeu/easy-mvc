@@ -6,7 +6,14 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Hello, <?= $data['Name'] ?>!</h1>
-    <a href="/test?age=18">Test</a>
+    <form action="/test" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="firstName"><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br>
+        <input type="submit" value="Send">
+    </form>
+
+    <?php var_dump($data); ?>
 </body>
 </html>
