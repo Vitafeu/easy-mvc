@@ -1,0 +1,104 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Vitafeu\EasyMVC\Database;
+
+// Load .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
+$dotenv->load();
+
+function makeController($name)
+{
+    $name = ucfirst($name);
+    $template = <<<EOT
+                <?php
+
+                namespace App\Controllers;
+
+                use Vitafeu\EasyMVC\Controller;
+
+                class {$name}Controller extends Controller {
+                    public function index() {   
+                        \$this->render('$name/Home');
+                    }
+                }
+                EOT;
+
+    $fileName = __DIR__ . "/app/Controllers/{$name}Controller.php"; 
+    
+    if (!file_exists($fileName)) {
+        file_put_contents($fileName, $template);
+        echo "$name controller created successfully\n";
+    } else {
+        echo "$name controller already exists\n";
+    }
+}
+
+function makeModel($name)
+{
+    $name = ucfirst($name);
+    $lowerName = strtolower($name);
+    $template = <<<EOT
+                <?php
+
+                namespace App\Models;
+
+                use Vitafeu\EasyMVC\Model;
+
+                class {$name} extends Model {
+                    protected static \$table = '{$lowerName}s';
+
+                    protected static \$attributes = [
+                        'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
+                        // Complete with your own attributes
+                    ];
+                }
+                EOT;
+
+    $fileName = __DIR__ . "/app/Models/{$name}.php"; 
+
+    if (!file_exists($fileName)) {
+        file_put_contents($fileName, $template);
+        echo "$name model created successfully\n";
+    } else {
+        echo "$name model already exists\n";
+    }
+}
+
+// Get command line arguments
+$args = $argv;
+array_shift($args);
+
+// Execute command
+if (!empty($args)) {
+    $command = array_shift($args);
+    switch ($command) {
+        case 'make:controller':
+            makeController(array_shift($args));
+            break;
+        case 'make:model':
+            makeModel(array_shift($args));
+            break;
+        case 'make:tables':
+            Database::createTables();
+            break;
+        case 'drop:tables':
+            Database::dropTables();
+            break;
+        case 'help':
+            echo "Available commands:\n";
+            echo "  make:controller <name>\n";
+            echo "  make:model <name>\n";
+            echo "  make:tables\n";
+            echo "  drop:tables\n";
+            break;
+        default:
+            echo "Invalid command\n";
+            echo "Use 'help' to list available commands\n";
+            break;
+    }
+} else {
+    echo "No command provided\n";
+} 
