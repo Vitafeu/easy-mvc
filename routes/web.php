@@ -6,6 +6,4 @@
 
 $this->addRoute('GET', '/', 'IndexController', 'home');
 
-$this->addRoute('GET', '/redirect', 'IndexController', 'testRedirect');
-
-$this->addRoute('POST', '/test', 'IndexController', 'test');
+$this->addRoute('POST', '/create', 'UserController', 'create');
