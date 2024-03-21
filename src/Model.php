@@ -2,6 +2,8 @@
 
 namespace Vitafeu\EasyMVC;
 
+use PDO;
+
 class Model {
     private static $conn = null;
 
@@ -11,13 +13,32 @@ class Model {
         }
     }
 
-    public static function all() {
-        $class = strtolower(basename(str_replace('\\', '/', get_called_class())));
+    public static function read() {
+        $calledClass = get_called_class();
 
         self::init();
-        $stmt = self::$conn->prepare("SELECT * FROM {$class}");
+
+        $columns = implode(',', array_keys($calledClass::$attributes));
+
+        $stmt = self::$conn->prepare("SELECT $columns FROM {$calledClass::$table}");
         $stmt->execute();
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+    public static function create($data) {
+        $calledClass = get_called_class();
+
+        self::init();
+
+        $columns = implode(',', array_keys($data));
+        $placeholders = implode(',', array_fill(0, count($data), '?'));
+
+        $sql = "INSERT INTO {$calledClass::$table} ($columns) VALUES ($placeholders)";
+        $stmt = self::$conn->prepare($sql);
+
+        $stmt->execute(array_values($data));
+
+        return self::$conn->lastInsertId();
     }
 }
