@@ -3,7 +3,7 @@
 namespace Vitafeu\EasyMVC;
 
 class Controller {
-    private $viewPath = __DIR__ . '/Views/';
+    private $viewPath = __DIR__ . '/../app/Views/';
 
     protected function render($view, $data = []) {
         extract($data);
