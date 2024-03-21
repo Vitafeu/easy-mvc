@@ -1,7 +1,10 @@
 {
     "name": "vitafeu/easy-mvc",
-    "description": "A small made from scratch MVC framework",
     "type": "library",
+    "description": "A small yet powerful made from scratch MVC framework",
+    "keywords": ["mvc", "framework", "php"],
+    "homepage": "https://github.com/vitafeu/easy-mvc",
+    "license": "MIT",
     "authors": [
         {
             "name": "Benjamin Feurly",
@@ -9,7 +12,8 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "php": "*"
     },
     "autoload": {
         "psr-4": {
