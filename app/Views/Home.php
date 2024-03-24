@@ -13,5 +13,24 @@
         <input type="email" id="email" name="email"><br>
         <input type="submit" value="Send">
     </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($data as $row) : ?>
+                <tr>
+                    <td><?= $row['id'] ?></td>
+                    <td><?= $row['name'] ?></td>
+                    <td><?= $row['email'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>

@@ -14,6 +14,6 @@ class IndexController extends Controller {
     public function home() {
         $data = User::read();
 
-        $this->render('Home');
+        $this->render('Home', $data);
     }
 }
