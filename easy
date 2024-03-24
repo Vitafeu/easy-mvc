@@ -67,6 +67,12 @@ function makeModel($name)
     }
 }
 
+// Check if running from command line
+if (!defined('STDIN')) {
+    fwrite(STDERR, "This script must be run from the command line.");
+    exit(1);
+}
+
 // Get command line arguments
 $args = $argv;
 array_shift($args);
@@ -75,6 +81,10 @@ array_shift($args);
 if (!empty($args)) {
     $command = array_shift($args);
     switch ($command) {
+        case 'serve':
+            echo "Starting server on http://localhost:8080 \n";
+            exec('php -S localhost:8080 -t public');
+            break;
         case 'make:controller':
             makeController(array_shift($args));
             break;
