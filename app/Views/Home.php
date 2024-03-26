@@ -20,6 +20,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,8 @@
                     <td><?= $row['id'] ?></td>
                     <td><?= $row['name'] ?></td>
                     <td><?= $row['email'] ?></td>
+                    <td><a href="/edit?id=<?= $row['id'] ?>">Edit</a>
+                    <a href="/delete?id=<?= $row['id'] ?>">Delete</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -12,4 +12,14 @@ class UserController extends Controller {
 
         $this->redirect('/');
     }
+
+    public function edit($params) {
+
+    }
+
+    public function delete($params) {
+        User::delete($params['id']);
+
+        $this->redirect('/');
+    }
 }
