@@ -41,4 +41,32 @@ class Model {
 
         return self::$conn->lastInsertId();
     }
+
+    public static function update($id, $data) {
+        $calledClass = get_called_class();
+
+        self::init();
+
+        $columns = implode(',', array_map(function ($key) {
+            return "{$key} = ?";
+        }, array_keys($data)));
+
+        $sql = "UPDATE {$calledClass::$table} SET $columns WHERE id = ?";
+        $stmt = self::$conn->prepare($sql);
+        $stmt->execute(array_merge(array_values($data), [$id]));
+
+        return $stmt->rowCount();
+    }
+
+    public static function delete($id) {
+        $calledClass = get_called_class();
+
+        self::init();
+
+        $sql = "DELETE FROM {$calledClass::$table} WHERE id = ?";
+        $stmt = self::$conn->prepare($sql);
+        $stmt->execute([$id]);
+
+        return $stmt->rowCount();
+    }
 }
