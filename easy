@@ -59,6 +59,11 @@ function makeModel($name)
 
     $fileName = __DIR__ . "/app/Models/{$name}.php"; 
 
+    if (!file_exists(__DIR__ . "/app/Models")) {
+        mkdir(__DIR__ . "/app/Models");
+        echo "Created app/Models folder\n";
+    }
+
     if (!file_exists($fileName)) {
         file_put_contents($fileName, $template);
         echo "$name model created successfully\n";
