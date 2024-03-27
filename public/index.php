@@ -1,9 +1,5 @@
 <?php
 
-/**
- * This file is used only to test the library.
- */
-
 require_once __DIR__ . '/../vendor/autoload.php';   
 
 use Vitafeu\EasyMVC\Router;

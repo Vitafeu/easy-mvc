@@ -89,13 +89,24 @@ if (!empty($args)) {
             makeController(array_shift($args));
             break;
         case 'make:model':
-            makeModel(array_shift($args));
+            $name = array_shift($args);
+            makeModel($name);
+
+            // check for controller flag
+            $nextArg = array_shift($args);
+            if ($nextArg === '-c' || $nextArg === '--controller') {
+                makeController($name);
+            }
             break;
         case 'make:tables':
             Database::createTables();
             break;
         case 'drop:tables':
             Database::dropTables();
+            break;
+        case 'refresh:tables':
+            Database::dropTables();
+            Database::createTables();
             break;
         case 'help':
             echo "Available commands:\n";
