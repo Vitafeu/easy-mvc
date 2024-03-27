@@ -14,7 +14,7 @@ class UserController extends Controller {
     }
 
     public function edit($params) {
-
+        
     }
 
     public function delete($params) {
