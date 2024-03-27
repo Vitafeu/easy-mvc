@@ -7,20 +7,37 @@ use PDO;
 class Model {
     private static $conn = null;
 
+    private static $query = '';
+
     private static function init() {
         if (self::$conn === null) {
             self::$conn = Database::getConnection();
         }
     }
 
-    public static function read() {
+    public static function where($condition) {
         $calledClass = get_called_class();
 
+        self::$query = "SELECT * FROM {$calledClass::$table}";
+
+        if (!empty($condition)) {
+            self::$query .= " WHERE $condition";
+        }
+
+        return new static();
+    }
+
+    public static function read() {
+        if (empty(self::$query)) {
+            $calledClass = get_called_class();
+
+            $columns = implode(',', array_keys($calledClass::$attributes));
+
+            self::$query = "SELECT $columns FROM {$calledClass::$table}";
+        }
+
         self::init();
-
-        $columns = implode(',', array_keys($calledClass::$attributes));
-
-        $stmt = self::$conn->prepare("SELECT $columns FROM {$calledClass::$table}");
+        $stmt = self::$conn->prepare(self::$query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
