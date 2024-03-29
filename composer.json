@@ -4,12 +4,6 @@
     "description": "The skeleton application for the Easy MVC framework",
     "keywords": ["mvc", "framework", "php"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Your name",
-            "email": "john@example.com"
-        }
-    ],
     "require": {
         "vitafeu/easy-mvc-framework": "dev-main",
         "php": "*"
