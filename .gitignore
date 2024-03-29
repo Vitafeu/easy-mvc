@@ -6,3 +6,6 @@ composer.lock
 
 # Ignore .env
 .env
+
+# Ignore firebase-adminsdk.json
+firebase-adminsdk.json
