@@ -4,6 +4,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Vitafeu\EasyMVC\Router;
 
+// Set the project root
+Vitafeu\EasyMVC\Globals::setProjectRoot(__DIR__ . '/../');
+
 // Load .env file
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
