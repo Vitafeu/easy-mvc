@@ -17,5 +17,8 @@ $router = new Router();
 // Set the controllers namespace
 $router->setControllersNamespace('App\\Controllers\\');
 
+// Set the middlewares namespace
+$router->setMiddlewaresNamespace('App\\Middlewares\\');
+
 // Start the router
 $router->start();
