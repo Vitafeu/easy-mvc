@@ -1,0 +1,39 @@
+site_name: Easy MVC
+site_author: Benjamin Feurly
+
+repo_url: https://github.com/vitafeu/easy-mvc
+repo_name: vitafeu/easy-mvc
+
+copyright: Copyright &copy; 2024 Benjamin Feurly
+
+theme:
+  language: en
+  name: material
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+  
+  features:
+    - navigation.tabs
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
