@@ -18,7 +18,7 @@ When your development environment is ready, then you can create a new project. T
 
 ### Using Composer
 
-If you wanna use Composer to create the project, you can simply create a new project with the Composer `create-project` command. This command will automatically clone the [Easy MVC repository](https://github.com/vitafeu/easy-mvc) and install all the dependencies. Here's an example :
+If you want to use Composer to create the project, you can simply create a new project with the Composer `create-project` command. This command will automatically clone the [Easy MVC repository](https://github.com/vitafeu/easy-mvc) and install all the dependencies. Here's an example :
 
 ```bash
 composer create-project vitafeu/easy-mvc:dev-main AwesomeProject
@@ -59,14 +59,14 @@ That's all you need to do to get started !
 
 ## Testing the project
 
-You can now test if your projet is working as expected. Assuming that you are in the project directory, you can run the following command :
+You can now test if your project is working as expected. Assuming that you are in the project directory, you can run the following command :
 
 ```bash
 php easy serve
 ```
 
 !!! info
-    Don't worry if you don't know what this command's about, we'll cover it later. For now, just remember that it will start the development server.
+    Don't worry if you don't know what this command's about, we'll cover it later. For now, just remember that this command will start the development server.
 
 This command will start the development server in the `public` directory (your project's entry point). You can now open your browser and navigate to [http://localhost:8080](http://localhost:8080) to test your project.
 
@@ -74,3 +74,5 @@ If you see the message "Welcome from Easy MVC !", then your project is working a
 
 !!! failure
     If you see anything else, please check you've correctly followed the instructions, or search for any hints in the console output.
+
+You can now move on to the next section to learn how to use Easy MVC.

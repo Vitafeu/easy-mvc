@@ -28,6 +28,7 @@ theme:
   
   features:
     - navigation.tabs
+    - navigation.footer
     - content.code.copy
 
 markdown_extensions:
@@ -45,3 +46,5 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started: getting-started.md
+  - Using the framework: 
+    - Prologue: using-the-framework.md
