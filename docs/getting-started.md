@@ -2,9 +2,6 @@
 hide: navigation
 ---
 
-
-# Getting started
-
 ## Requirements
 
 Assuming that you already have a development environment set up with PHP 8.2 or higher and an SQL server, Easy MVC is available as a [Composer package](https://packagist.org/packages/vitafeu/easy-mvc), so make sure you have Composer installed on your machine. If not, please follow the [Composer installation instructions](https://getcomposer.org/install).

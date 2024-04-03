@@ -1,6 +1,4 @@
-# Prologue
-
-As we have seen, the project you created in the [previous section](/getting-started) is based on the MVC architecture. In this section, we'll make sure that you start using the framework with a basic knowledge of this architecture. If you already have a basic understanding of it, you can skip this section.
+As we have seen, the project you created in the [previous section](getting-started.md) is based on the MVC architecture. In this section, we'll make sure that you start using the framework with a basic knowledge of this architecture. If you already have a basic understanding of it, you can skip this section.
 
 ## What is the MVC architecture ?
 
@@ -29,7 +27,7 @@ By separating the application into these distinct components, we achieve a clear
 
 But wait ! How can we access all of these ressources in a web application ? And how can we add layers of verification, like authentication, to control what users can access ?
 
-Those concepts are called **routes** and **middlewares**. Let's see how these work.
+Those concepts are called **routes** and **middlewares**. Let's see how they work.
 
 ### Routes
 
@@ -42,3 +40,5 @@ Now, let's shift our focus to middlewares, the intermediary layers that intercep
 ## Conclusion
 
 That's it for this section ! You've gained a solid understanding of fundamental concepts in the MVC architecture, which will undoubtedly aid you in your journey of web development. If any concept remains unclear, don't hesitate to search for clarification online !
+
+In the following sections, we'll learn how to use all of these concepts to build a complete web application, with this framework. We'll create a small project along the way to show you how to use them.

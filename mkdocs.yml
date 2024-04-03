@@ -31,20 +31,42 @@ theme:
     - navigation.footer
     - content.code.copy
 
+extra:
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:professional@vitafeu.com
+      name: Email me
+    - icon: fontawesome/brands/github
+      link: https://github.com/vitafeu
+      name: GitHub
+    - icon: fontawesome/brands/discord
+      link: https://discordapp.com/users/471369652212203540
+      name: Discord
+
+
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.highlight:
+      use_pygments: true
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md
   - Getting started: getting-started.md
   - Using the framework: 
     - Prologue: using-the-framework.md
+    - Routing: routing.md
+    - Controllers: controllers.md
+    - Views: views.md
+    - Models: models.md
+  - References: references.md
