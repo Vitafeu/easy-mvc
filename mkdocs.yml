@@ -33,6 +33,9 @@ theme:
 
 extra:
   social:
+    - icon: simple/kofi
+      link: https://ko-fi.com/vitafeu
+      name: Support me on Ko-fi !
     - icon: fontawesome/solid/paper-plane
       link: mailto:professional@vitafeu.com
       name: Email me
